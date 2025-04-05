@@ -1,5 +1,7 @@
 # OP.GG Esports MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@opgginc/esports-mcp)](https://smithery.ai/server/@opgginc/esports-mcp)
+
 It provides functionality to search for upcoming LoL match schedules using the OP.GG Esports GraphQL API.
 
 ## Features
