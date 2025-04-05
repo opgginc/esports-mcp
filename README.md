@@ -1,5 +1,7 @@
 # OP.GG Esports MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@opgginc/esports-mcp)](https://smithery.ai/server/@opgginc/esports-mcp)
+
 The OP.GG Esports MCP Server is a Model Context Protocol implementation that seamlessly connects OP.GG Esports data with AI agents and platforms. This server enables AI agents to retrieve upcoming League of Legends match schedules and information via function calling.
 
 ## Overview
@@ -15,6 +17,14 @@ The OP.GG Esports MCP Server currently supports the following tools:
   - Formats the data in a clean, structured format for AI consumption
 
 ## Installation
+
+### Installing via Smithery
+
+To install OP.GG Esports MCP for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@opgginc/esports-mcp):
+
+```bash
+npx -y @smithery/cli install @opgginc/esports-mcp --client claude
+```
 
 ### Using npm/pnpm
 
