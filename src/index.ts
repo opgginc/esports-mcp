@@ -30,6 +30,7 @@ async function fetchUpcomingMatches() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'User-Agent': 'MCP',
       },
       body: JSON.stringify({
         query: UPCOMING_MATCHES_QUERY,
