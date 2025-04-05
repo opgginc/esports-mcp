@@ -1,0 +1,46 @@
+This project is an MCP (Model Context Protocol) server that communicates with the OP.GG Esports API. The server provides a tool to fetch upcoming League of Legends match schedules from OP.GG Esports and returns formatted match information including match name, league, status, score, and scheduled time.
+
+When analyzing this project, focus on TypeScript patterns, error handling approaches, and GraphQL queries. The project uses node-fetch for API requests and follows a Promise-based async/await pattern throughout the codebase.
+
+## Code Conventions for TypeScript
+- Prefer interfaces over type aliases for object types
+- Use readonly modifier for immutable properties
+- Use const assertions for literal values
+- Use mapped types and utility types when appropriate
+- Avoid any, use unknown when type cannot be determined
+- Organize imports alphabetically and by groups (built-in, external, internal)
+- Use Arrow functions for callbacks
+- Prefer template literals over string concatenation
+- Use optional chaining and nullish coalescing where appropriate
+- Avoid type assertions when possible
+- Prefer function declarations over function expressions
+- Use enums for values that represent a specific set of choices
+
+## Documentation Guidelines
+- Add descriptive headers to all code files with purpose and author information
+- Each function should have a detailed comment block explaining its purpose, parameters, and return values
+- Use JSDoc style comments for TypeScript code documentation
+- Include examples in comments for complex logic or non-obvious implementations
+- Document all public interfaces and exported functions thoroughly
+- When writing complex algorithms, include comments explaining the approach
+- Add section headers as comments to organize large files (e.g. "// === API Handlers ===")
+- Use inline comments to explain "why" rather than "what" for non-obvious code
+- Document edge cases and error handling strategies in comments
+- Keep comments up-to-date when changing functionality
+- Include versioning information in file headers when making significant changes
+- Add TODO comments with ticket numbers for incomplete implementations
+- Add context and background information for workarounds or unusual approaches
+- Maintain a consistent commenting style throughout the codebase
+- Use descriptive variable and function names to reduce the need for obvious comments
+
+## Code Structure and Refactoring Guidelines
+- Refactor files that exceed 200 lines of code into multiple files or classes
+- Each class should have a single responsibility (follow the Single Responsibility Principle)
+- Extract reusable logic into utility functions or service classes
+- Group related functionality into modules or namespaces
+- Use dependency injection for better testability and loose coupling
+- Keep public APIs minimal - expose only what is necessary
+- Consider breaking large functions (>50 lines) into smaller, more focused functions
+- Prefer composition over inheritance when designing class relationships
+- Use feature-based directory structure for complex applications
+- Keep nesting to a minimum (maximum 3-4 levels of nesting)
