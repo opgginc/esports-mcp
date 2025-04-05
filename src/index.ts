@@ -7,6 +7,7 @@ const GRAPHQL_ENDPOINT = 'https://esports.op.gg/matches/graphql';
 const UPCOMING_MATCHES_QUERY = `
   query MCPListUpcomingMatches {
     upcomingMatches {
+      id
       name
       status
       awayScore
@@ -55,6 +56,7 @@ async function fetchUpcomingMatches() {
 }
 
 interface MatchInfo {
+  id: number;
   name: string;
   status: string;
   homeScore: number;
@@ -78,6 +80,7 @@ server.tool('get-lol-matches', 'Get upcoming LoL match schedules from OP.GG Espo
     const formattedMatches = matches.map((match: any): MatchInfo => {
       const league = match.tournament?.serie?.league || {};
       return {
+        id: match.id,
         name: match.name,
         status: match.status?.toUpperCase(),
         awayScore: match.awayScore,
@@ -95,7 +98,7 @@ server.tool('get-lol-matches', 'Get upcoming LoL match schedules from OP.GG Espo
           text: `Upcoming match schedules:\n\n${formattedMatches
             .map(
               (match: MatchInfo) =>
-                `Match: ${match.name}\nLeague: ${match.league}\nStatus: ${match.status}\nScore: ${match.homeScore} - ${match.awayScore}\nScheduled at: ${new Date(match.scheduledAt).toLocaleString()}\n---`
+                `Match: ${match.name}\nLeague: ${match.league}\nStatus: ${match.status}\nScore: ${match.homeScore} - ${match.awayScore}\nScheduled at: ${new Date(match.scheduledAt).toLocaleString()}\nDetails: https://esports.op.gg/matches/${match.id}\n---`
             )
             .join('\n')}`,
         },
